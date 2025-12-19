@@ -1,0 +1,776 @@
+/* ==========================================================================
+   ESTILOS GERAIS
+   ========================================================================== */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(128, 0, 255, 0.2);
+}
+
+p {
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #fff;
+}
+
+#subtitulo {
+    text-align: center;
+    font-size: 30px;
+    color: #8000ff;
+}
+
+.txtDestaque {
+    font-size: 22px;
+    text-align: left;
+    line-height: 2;
+    font-weight: bold;
+    color: #8000ff;
+}
+
+#txtQuemSomos {
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.titulo-camisas {
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #8000ff;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGAÇÃO
+   ========================================================================== */
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #232323;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.16);
+    z-index: 1000;
+    border-bottom: 4px solid #8000ff;
+    border-radius: 0 0 18px 18px;
+    transition: top 0.4s;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+#logo {
+    height: 70px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+.navbar-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.navbar-link:hover {
+    color: #8000ff;
+}
+
+.btn-theme {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.btn-theme img {
+    height: 30px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.btn-theme:hover img {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   CARDS E SEÇÕES
+   ========================================================================== */
+.card {
+    background: #232323;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    padding: 32px;
+    margin-bottom: 32px;
+    color: #fff;
+    border: 2px solid #8000ff;
+    position: relative;
+    overflow: visible;
+}
+
+.camisa-dia-card {
+    background: #232323;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(128, 0, 255, 0.08);
+    padding: 16px;
+    color: #fff;
+    border: 2px solid #8000ff;
+    text-align: center;
+}
+
+.camisa-dia-titulo {
+    color: #8000ff;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.camisa-dia-jogador,
+.camisa-dia-selecao {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+#destaque {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container.main-content {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+.sidebar-anuncios {
+    position: sticky;
+    top: 130px;
+    height: fit-content;
+    padding: 0;
+    z-index: 10;
+    margin-left: 60px;
+    width: 320px;
+}
+
+.card.anuncio-card {
+    background: #232323;
+    border: 2px solid #8000ff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(128, 0, 255, 0.08);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.anuncio-card h4 {
+    color: #8000ff;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   BANNER/CARROSSEL
+   ========================================================================== */
+#banner {
+    margin-top: 110px;
+    margin-bottom: 32px;
+    padding: 0;
+    background: rgba(35, 35, 35, 0.85);
+    border: 2px solid #8000ff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+    position: relative;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.banner-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: opacity 0.6s;
+}
+
+.banner-slide.active {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.banner-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #8000ff;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.8;
+    transition: background 0.2s;
+}
+
+.banner-control:hover {
+    background: #a366ff;
+}
+
+.banner-control.prev {
+    left: 16px;
+}
+
+.banner-control.next {
+    right: 16px;
+}
+
+.banner-indicators {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 4;
+}
+
+.indicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 2px solid #8000ff;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.indicator.active {
+    background: #8000ff;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   ESTILOS DE IMAGENS
+   ========================================================================== */
+#home-img,
+#camisas-ultimos-dias,
+#quem-somos {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid #8000ff;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    padding: 32px;
+}
+
+.img-bg-home,
+.img-bg-ultimos,
+.img-bg-quem {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.75;
+}
+
+.card-content-home,
+.card-content-ultimos,
+.quem-content {
+    position: relative;
+    z-index: 2;
+}
+
+#neymar {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   SEÇÃO DE CONTATO
+   ========================================================================== */
+.contato-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.contato-item {
+    flex: 1;
+    min-width: 500px; /* Garante que os itens não fiquem muito pequenos */
+}
+
+.titulo-branco {
+    color: #fff;
+    text-shadow: none;
+    text-align: center;
+}
+
+.contato-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #444;
+    background-color: #181818;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    outline: none;
+    border-color: #8000ff;
+    box-shadow: 0 0 5px rgba(128, 0, 255, 0.5);
+}
+
+.contato-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    border: none;
+    background-color: #8000ff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.contato-form button:hover {
+    background-color: #a366ff;
+}
+
+/* ==========================================================================
+   AJUSTES DE LAYOUT GERAIS
+   ========================================================================== */
+.container.main-content {
+    margin-top: 120px !important;
+    margin-bottom: 40px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-md-8 {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.site-footer {
+    background: #181818;
+    border-top: 2px solid #8000ff;
+    padding: 32px 0 16px 0;
+    color: #fff;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+/* ==========================================================================
+   ANIMAÇÕES
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   TEMAS
+   ========================================================================== */
+/* Tema Escuro */
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+body.dark-mode h2 {
+    color: #f0f0f0; /* Ou qualquer cor clara de sua preferência */
+}
+
+/* Se você também tiver outros textos em branco no modo escuro,
+   você pode usar uma regra mais genérica como esta: */
+body.dark-mode {
+    color: #f0f0f0; /* Isso afeta todos os textos do corpo da página */
+}
+
+/* No seu arquivo CSS */
+#formPopup h2 {
+    color: #333; /* Cor original para o modo claro */
+}
+
+.dark-mode .card,
+.dark-mode .anuncio-card {
+    background: #232323;
+    border: 2px solid #8000ff;
+    color: #fff;
+}
+
+.dark-mode .navbar-custom {
+    background-color: #232323;
+    border-bottom: 4px solid #8000ff;
+}
+
+.dark-mode .navbar-search input {
+    background: #181818;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.dark-mode .navbar-link {
+    color: #ffffff;
+}
+
+.dark-mode .navbar-link:hover {
+    color: #8000ff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(128, 0, 255, 0.2);
+}
+
+.dark-mode .site-footer {
+    background: #232323;
+    color: #fff;
+    border-top: 2px solid #8000ff;
+}
+
+/* Tema Claro */
+body.light-mode {
+    background-color: #f0f2f5;
+    color: #000;
+}
+
+.light-mode .card,
+.light-mode .anuncio-card {
+    background: #fff;
+    border: 2px solid #ddd;
+    color: #000;
+}
+
+.light-mode .navbar-custom {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #8000ff;
+}
+
+.light-mode .navbar-search input {
+    background: #eee;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.light-mode .navbar-link {
+    color: #000;
+}
+
+.light-mode .navbar-link:hover {
+    color: #8000ff;
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+    color: #8000ff;
+    text-shadow: none;
+}
+
+.light-mode .site-footer {
+    background: #e9ebee;
+    color: #000;
+    border-top: 2px solid #ddd;
+}
+
+.light-mode .titulo-branco {
+    color: #000;
+    text-shadow: none;
+}
+
+.light-mode #subtitulo,
+.light-mode .txtDestaque {
+    color: #000;
+}
+
+.light-mode #tituloDestaque {
+    color: #8000ff;
+}
+
+.light-mode .camisa-dia-jogador,
+.light-mode .camisa-dia-selecao {
+    color: #000;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 991px) {
+    .sidebar-anuncios {
+        position: static;
+        margin-top: 32px;
+    }
+    .col-lg-9, .col-md-8, .col-lg-3, .col-md-4 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .contato-item {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #contato form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: end;
+    }
+    #contato label, #contato input, #contato textarea {
+        margin-top: 0;
+    }
+    #contato label[for="mensagem"] {
+        grid-column: 1 / -1;
+    }
+    #contato textarea {
+        height: 100px;
+    }
+    #contato button {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Correções gerais de texto para o modo claro */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode p,
+.light-mode a,
+.light-mode label {
+color: #000 !important;
+}
+
+/* Correção específica para links e parágrafos do rodapé */
+.light-mode .site-footer a,
+.light-mode .site-footer p {
+color: #000 !important;
+}
+
+#direitos {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   AVISO DE COOKIES
+   ========================================================================== */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #232323;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    z-index: 9999;
+    animation: fadeIn 0.8s;
+}
+
+/* Esconde o banner inicialmente */
+.cookie-banner.hidden {
+    display: none;
+}
+
+.cookie-text {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cookie-link {
+    color: #8000ff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.btn-cookie {
+    background-color: #8000ff;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cookie:hover {
+    background-color: #a366ff;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o modo claro */
+.light-mode .cookie-banner {
+    background-color: #f0f2f5;
+    color: #000;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .cookie-banner .cookie-text {
+    color: #000 !important;
+}
+
+.light-mode .cookie-banner .cookie-link {
+    color: #8000ff !important;
+}
+
+/* ==========================================================================
+   AVISO DE COOKIES (continuação)
+   ========================================================================== */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #8000ff;
+}
+
+/* Estilos para o modo claro */
+.light-mode .close-btn {
+    color: #000;
+}
+
+.light-mode .close-btn:hover {
+    color: #8000ff;
+}
