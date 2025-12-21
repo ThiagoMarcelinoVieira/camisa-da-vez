@@ -2,9 +2,10 @@
 
 ![Demonstração do site](img/print-do-site.png)
 
-O Camisa da Vez é um projeto que une futebol e tecnologia de um jeito criativo: a cada dia do mês, o site destaca um jogador que utilizou aquela numeração específica. Se hoje é dia 21, o sistema busca automaticamente no banco de dados um atleta histórico com a camisa 21.
+O Camisa da Vez é um projeto que une futebol e tecnologia de um jeito criativo: a cada dia do mês, o site destaca um jogador que utilizou aquela numeração específica. Se hoje é dia 10, o sistema busca automaticamente no banco de dados um atleta histórico com a camisa 10.
 
-🚀 O que aprendi com este projeto
+🚀 O que aprendi
+
 Este foi um dos meus maiores desafios técnicos iniciais. Nele, coloquei em prática:
 
 Lógica de Programação: Usei PHP e MySQL para fazer o sistema "entender" a data atual e exibir o conteúdo correto.
