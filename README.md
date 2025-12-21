@@ -14,7 +14,8 @@ Resolução de Problemas: Tive dificuldades para fazer o botão de Dark/Light Mo
 
 Adaptabilidade: Após um feedback do meu professor sobre responsividade, refatorei o código para que o site ficasse perfeito também no celular.
 
-🛠 Tecnologias
+🛠 Tecnologias Utilizadas
+
 Linguagens: PHP e JavaScript.
 
 Banco de Dados: MySQL.
