@@ -19,3 +19,5 @@ Linguagens: PHP e JavaScript.
 Banco de Dados: MySQL.
 
 Estilização: HTML5, CSS3 e Bootstrap.
+
+Hospedagem: InfinityFree
