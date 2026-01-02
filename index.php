@@ -1,33 +1,33 @@
-<?php 
+<?php
     // 1. INCLUIR CONEXÃO
-    include 'conexao.php'; 
+    include 'conexao.php';
 
-    // Define o fuso horário (MUITO IMPORTANTE estar no topo)
     date_default_timezone_set('America/Sao_Paulo');
 
     // 2. LÓGICA DA CAMISA DE HOJE
-    $dia_atual = date('j'); 
+    $dia_atual = date('j');
 
     $sql_hoje = "SELECT * FROM camisas WHERE dia = :dia_atual LIMIT 1";
     $stmt_hoje = $pdo->prepare($sql_hoje);
     $stmt_hoje->bindParam(':dia_atual', $dia_atual, PDO::PARAM_INT);
     $stmt_hoje->execute();
-    $camisa_hoje = $stmt_hoje->fetch(); 
-    
+    $camisa_hoje = $stmt_hoje->fetch();
+
     if (!$camisa_hoje) {
         $camisa_hoje = [
             'dia' => $dia_atual,
             'jogador' => 'Camisa não cadastrada',
             'selecao_time' => 'Aguarde a atualização!',
-            'imagem_arquivo' => '0exemplo.jpg' 
+            'imagem_arquivo' => '0exemplo.jpg'
         ];
     }
 
-    // 3. LÓGICA DAS ÚLTIMAS 20 CAMISAS (Agora direto da tabela camisas)
-    // Buscamos camisas com dia menor que hoje, da maior para a menor
+    // 3. LÓGICA DAS ÚLTIMAS 20 CAMISAS
     $sql_ultimas = "SELECT * FROM camisas 
-                    WHERE dia < :dia_atual 
-                    ORDER BY dia DESC LIMIT 20";
+                        WHERE dia != :dia_atual 
+                        ORDER BY CASE WHEN dia < $dia_atual THEN 1 ELSE 0 END DESC, dia DESC 
+                        LIMIT 20";
+
     $stmt_ultimas = $pdo->prepare($sql_ultimas);
     $stmt_ultimas->bindParam(':dia_atual', $dia_atual, PDO::PARAM_INT);
     $stmt_ultimas->execute();
