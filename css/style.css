@@ -285,6 +285,7 @@ strong {
     border: 2px solid #8000ff;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    min-height: 360px;
 }
 
 .camisa-dia-card:hover {

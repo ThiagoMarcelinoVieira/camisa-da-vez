@@ -62,7 +62,7 @@
                             <h3 id="tituloDestaque">Camisa de Hoje</h3>
                             <p class="txtDestaque"><strong>Dia:</strong> <?php echo $camisa_hoje['dia']; ?></p>
                             <p class="txtDestaque"><strong>Jogador:</strong> <?php echo $camisa_hoje['jogador']; ?></p>
-                            <p class="txtDestaque"><strong>Time:</strong> <?php echo $camisa_hoje['selecao_time']; ?></p>
+                            <p class="txtDestaque"><strong>Time/Seleção:</strong> <?php echo $camisa_hoje['selecao_time']; ?></p>
                         </div>
                     </div>
                 </div>
